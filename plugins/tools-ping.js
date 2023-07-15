@@ -80,28 +80,28 @@ conn
       second: 'numeric'
     })
 await m.reply('_Testing speed..._')
-  var txt = `*ᴘ ɪ ɴ ɢ*
+  var txt = `*ᴋᴇᴄᴇᴘᴀᴛᴀɴ*
 ${Math.round(neww - old)} ms
 ${speed} ms
 
-*ʀ ᴜ ɴ ᴛ ɪ ᴍ ᴇ* 
+*ʀᴜɴᴛɪᴍᴇ* 
 ${muptime}
 
-*ᴄ ʜ ᴀ ᴛ s*
-• *${groupsIn.length}* Group Chats
-• *${groupsIn.length}* Groups Joined
-• *${groupsIn.length - groupsIn.length}* Groups Left
-• *${chats.length - groupsIn.length}* Personal Chats
-• *${chats.length}* Total Chats
+*ɪɴꜰᴏʀᴍᴀꜱɪ*
+*Grup Chat* : ${groupsIn.length}
+*Grup Join* : ${groupsIn.length}
+*Grup Keluar* : ${groupsIn.length - groupsIn.length}
+*Chat Pribadi* : ${chats.length - groupsIn.length}
+*Total Chat* : ${chats.length}
 
-*s ᴇ ʀ ᴠ ᴇ ʀ*
-*🛑 ʀᴀᴍ:* ${format(totalmem() - freemem())} / ${format(totalmem())}
-*🔵 ғʀᴇᴇRAM:* ${format(freemem())}
-*🔴 ᴍᴇᴍᴏʀy:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-*🔭 ᴘʟᴀᴛғᴏʀᴍ:* ${os.platform()}
-*🧿 sᴇʀᴠᴇʀ:* ${os.hostname()}
-*💻 ᴏs:* ${OS}
-*⏰ ᴛɪᴍᴇ sᴇʀᴠᴇʀ:* ${times}
+*ꜱᴇʀᴠᴇʀ*
+*Ram* : ${format(totalmem() - freemem())} / ${format(totalmem())}
+*Free Ram* : ${format(freemem())}
+*Memory* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+*Platform* : ${os.platform()}
+*Server* : ${os.hostname()}
+*Operating System* : ${OS}
+*Waktu Server* : ${times}
 
 _NodeJS Memory Usage_
 ${
@@ -159,7 +159,7 @@ extendedTextMessage:{
                         mediaType: 1,
                         previewType: 0,
                         renderLargerThumbnail: true,
-                        thumbnailUrl: 'https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg',
+                        thumbnailUrl: 'https://telegra.ph/file/896b1af10f36e1780c5d3.jpg',
                         sourceUrl: ''
                     }
                 }, mentions: [m.sender]
@@ -175,9 +175,5 @@ function clockString(ms) {
   var h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24
   var m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
   var s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [d, 'D ', h, 'H ', m, 'M ', s, 'S '].map(v => v.toString().padStart(2, 0)).join('')
+  return [d, ' Hari ', h, ' Jam ', m, ' Menit ', s, ' Detik '].map(v => v.toString().padStart(2, 0)).join('')
 }
-
-        
-       
-
