@@ -1,6 +1,6 @@
 let handler = async (m) => {
     global.db.data.chats[m.chat].isBanned = false
-    m.reply(' *Sukses Menghidupkan ! AkiraaBot 🤖* ')
+    m.reply('*berhasil menghidupkan мυʀѕι∂ вσт-χмℓ*')
 }
 
 
