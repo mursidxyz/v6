@@ -8,11 +8,11 @@ let handler = async (m, { conn }) => {
 
     let tio = `
 
-Mode: ${global.opts['self'] ? 'Self' : 'publik'}\nAktif: ${uptimex}\nPengguna: ${Object.keys(global.db.data.users).length}\nPengguna Terbanned: ${Object.entries(global.db.data.users).filter(user => user[1].banned).length}\nFitur Sering Digunakan: ${Object.entries(db.data.stats).length}\n\nJika bot tidak ada balasan maka bot sedang maintenance.
+tag : ${m.sender.replace(/@.+/, '')}\nowner : mrsd\nmode : ${global.opts['self'] ? 'private' : 'publik'}\naktif : ${uptimex}\npengguna : ${Object.keys(global.db.data.users).length}\npengguna terbanned : ${Object.entries(global.db.data.users).filter(user => user[1].banned).length}\nfitur digunakan : ${Object.entries(db.data.stats).length}\nnama bot : ${conn.user.name}\ntotal fitur : jumlah fitur 605
 
     `.trim()
 
-conn.sendFile(m.chat, `https://telegra.ph/file/d6202dfdc68e72b669631.jpg`, null, tio, m)
+conn.sendFile(m.chat, `https://telegra.ph/file/de816f625ae21e7702b06.png`, null, tio, m)
 
 }
 
@@ -44,6 +44,6 @@ function clockString(ms) {
 
     let sec = Math.floor((minutesms) / (1000));
 
-    return days + " Hari " + hours + " Jam " + minutes + " Menit " + sec + " Detik";
+    return days + " hari " + hours + " jam " + minutes + " menit " + sec + " detik";
 
 }
