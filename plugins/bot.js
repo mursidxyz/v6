@@ -4,27 +4,26 @@ let handler = async (m, { conn }) => {
     let uptimex = clockString(_uptime)
 
     let tio = `
- *_STATUS BOT ONLINE✅_*
-Uptime: _*${uptimex}*_
+*aktif selama :* *${uptimex}*
     `.trim()
 conn.relayMessage(m.chat, {
   extendedTextMessage:{
                 text: tio, 
                 contextInfo: {
                      externalAdReply: {
-                        title: 'Akiraabotz multi Device',
-                        body: 'Ketik Menu untuk Memulai✅',
+                        title: 'мυʀѕι∂ вσт-χмℓ',
+                        body: 'ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍᴜʀꜱɪᴅ',
                          mediaType: 3,
-                        previewType: 0,
+                        previewType: 3,
                         renderLargerThumbnail: false,
-                        thumbnailUrl: 'https://telegra.ph/file/19e8baef2fcf3ac8cf76a.jpg',
+                        thumbnailUrl: 'https://telegra.ph/file/d4fa603a9f3d0a2aacf3a.jpg',
                         sourceUrl: ''
                     }
                 }, mentions: [m.sender]
 }}, {})
 }
 handler.tags = ['main']
-handler.customPrefix = /^(test|tes|bot)$/i 
+handler.customPrefix = /^(test|tes)$/i 
 handler.command = new RegExp
 handler.limit = false
 
@@ -38,5 +37,5 @@ function clockString(ms) {
     let minutes = Math.floor((hoursms) / (60 * 1000));
     let minutesms = ms % (60 * 1000);
     let sec = Math.floor((minutesms) / (1000));
-    return days + " Hari " + hours + " Jam " + minutes + " Menit " + sec + " Detik";
-}
+    return days + " hari " + hours + " jam " + minutes + " menit " + sec + " detik";
+                
