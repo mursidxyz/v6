@@ -9,28 +9,28 @@ let { limit, role, level, exp, premiumTime } = db.data.users[m.sender]
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   let pp = await conn.profilePictureUrl(who, 'image').catch((_) => "https://telegra.ph/file/24fa902ead26340f3df2c.png")
   let bugmenu = ` 
-█ ❏ *Name:* ${name}
-█ ❏ *Tag:* ${tag}
-█ ❏ *Status:* ${premiumTime > 0 ? 'Premium' : 'Free user' }
-█ ❏ *Limit:* ${limit}
-█ ❏ *Role:* ${role}
-█ ❏ *Level:* ${level}
-█ ❏ *XP:* ${exp}
-█▓▓
-         
-╔════ 「 Bug Emote 」 ════╗
-║❏➣ ${usedPrefix}🌹 628xxxx
-║❏➣ ${usedPrefix}🌻 628xxxx
-║❏➣ ${usedPrefix}😎 628xxxx
-║❏➣ ${usedPrefix}👽 628xxxx
-║❏➣ ${usedPrefix}🗿 628xxxx
-║❏➣ ${usedPrefix}😃 628xxxx
-║❏➣ ${usedPrefix}💀 628xxxx
-║❏➣ ${usedPrefix}😅 628xxxx
-║❏➣ ${usedPrefix}🥶 628xxxx
-║❏➣ ${usedPrefix}®️ 628xxxx
-║❏➣ ${usedPrefix}🐓 628xxxx
-╚════ 「 ${global.wm} 」 ════╝`
+ ┌─「 мυʀѕι∂ вσт-χмℓ 」─✽
+ │ ⬡ *Nama :* ${name}
+ │ ⬡ *Tag : * ${tag}
+ │ ⬡ *Status :* ${premiumTime > 0 ? 'Ya' : 'Tidak' }
+ │ ⬡ *Limit :* ${limit}
+ │ ⬡ *Role :* ${role}
+ │ ⬡ *Level :* ${level}
+ │ ⬡ *Xp :* ${exp}
+ └────────✽       
+ ┌─「 Bug Emote 」═✽
+ │ ⬡ ${usedPrefix}🌹 628xxxx
+ │ ⬡ ${usedPrefix}🌻 628xxxx
+ │ ⬡ ${usedPrefix}😎 628xxxx
+ │ ⬡ ${usedPrefix}👽 628xxxx
+ │ ⬡ ${usedPrefix}🗿 628xxxx
+ │ ⬡ ${usedPrefix}😃 628xxxx
+ │ ⬡ ${usedPrefix}💀 628xxxx
+ │ ⬡ ${usedPrefix}😅 628xxxx
+ │ ⬡ ${usedPrefix}🥶 628xxxx
+ │ ⬡ ${usedPrefix}®️ 628xxxx
+ │ ⬡ ${usedPrefix}🐓 628xxxx
+ └────────✽`
   let flaa = pickRandom(global.flaaaaa)
   await m.reply(bugmenu)
 }
