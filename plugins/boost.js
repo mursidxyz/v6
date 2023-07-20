@@ -2,11 +2,11 @@ let { performance } = require('perf_hooks')
 
 let handler = async (m, { conn }) => {
 
- let start = `Tunggu sedang di Percepat...`
+ let start = `tunggu sedang dipercepat...`
  let boost = `${pickRandom(['[▒▒▒▒▒▒▒▒▒▒]'])}`
  let boost2 = `${pickRandom(['[█▒▒▒▒▒▒▒▒▒]','[██▒▒▒▒▒▒▒▒]'])}`
  let boost3 = `${pickRandom(['[██▒▒▒▒▒▒▒▒]','[███▒▒▒▒▒▒▒▒]','[████▒▒▒▒▒▒▒]'])}`
- let boost4 = `${pickRandom(['[██████▒▒▒▒▒▒▒]','[████████▒▒▒▒▒▒]','[████████▒▒▒▒]'])}`
+ let boost4 = `${pickRandom(['[█████▒▒▒▒▒▒▒]','[██████▒▒▒▒▒▒]','[███████▒▒▒▒]'])}`
  let boost5 = `${pickRandom(['[██████████▒▒▒]','[████████████▒]'])}`
  let boost6 = `${pickRandom(['*Conection Lost...*','[████████████▒]','[█▒▒▒▒▒▒▒▒▒]'])}`
  let boost7 = `${pickRandom(['[██████████▒▒▒]','[████████████▒]','[████████████]'])}`
@@ -22,7 +22,7 @@ await conn.sendMessage(m.chat, {text: `${boost7}`, edit: key})
    let old = performance.now()
    let neww = performance.now()
    let speed = `${neww - old}`
-   let finish = `*Bot Berhasil Dipercepat*\n\n*_Kecepatan: ${speed} Detik!*`
+   let finish = `*${conn.user.name} berhasil dipercepat dengan kecepatan ${speed} detik*`
 await conn.sendMessage(m.chat, {text: `${finish}`, edit: key})
 }
 handler.help = ['boost', 'refresh']
