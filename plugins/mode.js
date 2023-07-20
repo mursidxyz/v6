@@ -46,4 +46,4 @@ function clockString(ms) {
 
     return days + " hari " + hours + " jam " + minutes + " menit " + sec + " detik";
 
-}
+    
