@@ -2,7 +2,7 @@ let fetch = require ('node-fetch')
 
 let handler = async (m, { conn }) => {
 	let url = akira[Math.floor(Math.random() * akira.length)]
-	conn.sendFile(m.chat, url, null, 'Random Akira', m)
+	conn.sendFile(m.chat, url, null, 'random akira', m)
 }
 handler.command = /^(akira)$/i
 handler.tags = ['anime']
