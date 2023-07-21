@@ -38,4 +38,4 @@ function clockString(ms) {
     let minutesms = ms % (60 * 1000);
     let sec = Math.floor((minutesms) / (1000));
     return days + " hari " + hours + " jam " + minutes + " menit " + sec + " detik";
-                
+}
