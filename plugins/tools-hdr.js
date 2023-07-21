@@ -111,7 +111,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 			{
 				conn.hdr = conn.hdr ? conn.hdr : {};
 				if (m.sender in conn.hdr)
-					throw "Masih Ada Proses Yang Belum Selesai Kak, Silahkan Tunggu Sampai Selesai Yah >//<";
+					throw "Masih Ada Proses Yang Belum Selesai Kak, Silahkan Tunggu Sampai Selesai Yah";
 				let q = m.quoted ? m.quoted : m;
 				let mime = (q.msg || q).mimetype || q.mediaType || "";
 				if (!mime)
@@ -119,12 +119,12 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 				if (!/image\/(jpe?g|png)/.test(mime))
 					throw `Mime ${mime} tidak support`;
 				else conn.hdr[m.sender] = true;
-				m.reply("Proses Kak...");
+				m.reply("Loading...");
 				let img = await q.download?.();
 				let error;
 				try {
 					const This = await processing(img, "enhance");
-					conn.sendFile(m.chat, This, "", "Sudah Jadi Kak >//<", m);
+					conn.sendFile(m.chat, This, "", "Done", m);
 				} catch (er) {
 					error = true;
 				} finally {
@@ -140,5 +140,5 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 handler.help = ["enhancer", "hdr", "colorize"];
 handler.tags = ["tools"];
 handler.premium = false;
-handler.command = ["unblur", "enchaner", "enhance", "hdr", "colorize", "hd"];
+handler.command = ["unblur", "enchaner", "remini", "hdr", "colorize", "hd"];
 module.exports = handler;
