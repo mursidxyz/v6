@@ -1,14 +1,20 @@
-let fs = require('fs')
-let handler = async (m, { conn }) => {
-//FAKEREPLY KONTAK
- const fcon = {
-	 key:
-	 { fromMe: true,
-	 participant: `0@s.whatsapp.net`, ...(m.chat ? 
-	 { remoteJid: "status@broadcast" } : {}) },
-	 message: { "contactMessage": { "title":"sri","h": `haloo`, 'jpegThumbnail': 'https://pixiv.lolhuman.xyz/c/600x1200_90/img-master/img/2023/07/10/21/11/08/109801594_p0_master1200.jpg'}}
-	}
-conn.reply(m.chat, 'Kebijakan privasi мυʀѕι∂ вσт-χмℓ\n1. Bot tidak akan merekam data riwayat chat user.
+let handler = async (m) => {
+    let who
+    if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
+    else who = m.sender
+    fdoc = {
+  key : {
+  remoteJid: 'status@broadcast',
+  participant : '0@s.whatsapp.net'
+  },
+  message: {
+  documentMessage: {
+  title: wm, 
+                            }
+                          }
+                        }
+conn.reply(m.chat, `Kebijakan Privasi
+1. Bot tidak akan merekam data riwayat chat user.
 2. Bot tidak akan menyebarkan nomor users.
 3. Bot tidak akan menyimpan media yang dikirimkan oleh users.
 4. Bot tidak akan menyalah gunakan data data users.
@@ -36,16 +42,16 @@ Syarat Ketentuan мυʀѕι∂ вσт-χмℓ
 • Aguz Familia
 • Syahrul
 • Amirul Dev
-• Nayla Cans
 • Ziv San
+• Bang Syaii
+• Wulan Pedia ( Clown Store )
 • BOTCAHX
 • The.sad.boy01
-• Bang Syaii
-• Wulan Pedia
-• Mursid S', fcon) 
+• Nayla Hanifah
+• Krizyn_Ofc
+• Mursid S`, fdoc)
 }
-handler.help = ['rules']
 handler.tags = ['main']
-handler.command = /^(rules)$/i
-
+handler.command = /^(rules2)$/i
+handler.help = ['rules2']
 module.exports = handler
