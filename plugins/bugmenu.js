@@ -11,7 +11,7 @@ let { limit, role, level, exp, premiumTime } = db.data.users[m.sender]
   let bugmenu = ` 
  ┌─「 мυʀѕι∂ вσт-χмℓ 」─✽
  │ ⬡ *Nama :* ${name}
- │ ⬡ *Tag : * ${tag}
+ │ ⬡ *Tag :* ${tag}
  │ ⬡ *Status :* ${premiumTime > 0 ? 'Ya' : 'Tidak' }
  │ ⬡ *Limit :* ${limit}
  │ ⬡ *Role :* ${role}
