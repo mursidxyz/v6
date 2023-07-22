@@ -7,7 +7,7 @@ let reply = `
 │⬡ Adiwajshing
 │⬡ Nurutomo 
 │⬡ Istikmal
-│⬡ Ariffb as stikerin
+│⬡ Ariffb 
 │⬡ TioXd 
 │⬡ Aguz Familia 
 │⬡ Ziv San 
@@ -38,11 +38,6 @@ let reply = `
 │⬡ Aniq12
 │⬡ Krizyn_ofc
 │⬡ Mursid S 
-│⬡ PENYEDIA LAYANAN MODULE
-│⬡ PENYEDIA  LAYANAN APi
-│⬡ ALL CREATOR 
-│⬡ PENGGUNA BOT
-│⬡ PARA DONATUR
 └───────────•
 `
 conn.relayMessage(m.chat, {
@@ -50,12 +45,12 @@ conn.relayMessage(m.chat, {
                 text: reply, 
                 contextInfo: {
                      externalAdReply: {
-                        title: 'Akiraabotz multi device',
+                        title: 'мυʀѕι∂ вσт-χмℓ',
                         mediaType: 1,
                         previewType: 0,
                         renderLargerThumbnail: true,
-                        thumbnailUrl: 'https://telegra.ph/file/d6202dfdc68e72b669631.jpg',
-                        sourceUrl: 'https://chat.whatsapp.com/FmhN8kxZf9f9qjkCZCBF97'
+                        thumbnailUrl: 'https://telegra.ph/file/b6b96cc2bd31e3481f6f2.png',
+                        sourceUrl: 'https://chat.whatsapp.com/K4k4vkiENh11HMBMCZ8eox'
                     }
                 }, mentions: [m.sender]
 }}, {})
