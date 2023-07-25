@@ -4,9 +4,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let mime = (q.msg || q).mimetype || ''
     if (/image/.test(mime)) {
         let img = await q.download()
-        if (!img) throw 'Gambar tidak ditemukan'
+        if (!img) throw 'gambar tidak ditemukan'
         await conn.updateProfilePicture(bot, img)
-        conn.reply(m.chat, 'Sukses Mengganti Foto Profile Bot!', m)
+        conn.reply(m.chat, 'succes update foto profile bot', m)
     } else throw `kirim/balas gambar dengan caption *${usedPrefix + command}*`
 }
 handler.help = ['setppbot']
