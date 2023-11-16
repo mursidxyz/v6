@@ -18,14 +18,15 @@ global.mods = ['6288233832771']
 global.prems = ['6288233832771']
 global.nameowner = 'mrsd'
 global.numberowner = '6288233832771' 
-global.mail = 'mursidxml@gmail.com' 
+global.mail = 'mursidxyz@gmail.com' 
 global.dana = '088233832771'
 global.pulsa = '083189913217'
 global.gopay = '083189913217'
 global.namebot = 'мυʀѕι∂ вσт-χмℓ'
-global.gc = 'https://chat.whatsapp.com/K4k4vkiENh11HMBMCZ8eox'
+global.gc = 'https://chat.whatsapp.com/BbSS7pnbSgrCLswuzvOwb5'
 global.web = 'https://github.com/mursidxml'
 global.instagram = 'https://instagram.com/mursid.st'
+global.thumb = 'https://telegra.ph/file/abdd903835895e53aeeb5.jpg'
 global.wm = 'мυʀѕι∂ вσт-χмℓ'
 global.watermark = wm
 global.wm2 = 'мυʀѕι∂ вσт-χмℓ'
@@ -35,19 +36,19 @@ global.wait = '_*𝐭𝐮𝐧𝐠𝐠𝐮 𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩
 global.eror = '_*𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬 ...*_'
 global.benar = '*benar*'
 global.salah = '*salah*'
-global.stiker_wait = '*ѕтɪᴄкєʀ ѕє∂αɴg ∂ι вυαт...*'
-global.packname = 'мα∂ᴇ ωɪтᴄн'
+global.stiker_wait = '_*𝐭𝐮𝐧𝐠𝐠𝐮 𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬 ...*_'
+global.packname = 'ʙᴏᴛ ᴡʜᴀᴛꜱᴀᴘᴘ'
 global.author = 'мυʀѕι∂ вσт-χмℓ'
 global.read = true//Untuk autoread kalau pengen autoread nyala true kalau pengen mati false 
 //==> Apikey
-global.lann = 'jLGiBWwj' //isi apikey mu https://api.betabotz.org
-global.btc = 'TvYTERTo'//Isi apikey di https://api.botcahx.live
+global.lann = 'xn4XAZ2K' //isi apikey mu https://api.betabotz.org
+global.btc = 'NWvaNDcP'//Isi apikey di https://api.botcahx.live
 global.APIs = {   
   lann: 'https://api.betabotz.org',
   btc: 'https://api.botcahx.live'
 }
 global.APIKeys = { 
-  'https://api.betabotz.org': 'jLGiBWwj' //isi apikey mu https://api.betabotz.org
+  'https://api.betabotz.org': 'xn4XAZ2K' //isi apikey mu https://api.betabotz.org
 }
 
 global.multiplier = 45
