@@ -1,4 +1,3 @@
-
 // - Ubah nomor owner dan wm di sini.
 // + Daftar apikey terlebih dahulu sebelum menggunakan svript ini link
 //https://api.betabotz.org
@@ -13,12 +12,13 @@
 // Betabotz = digunakan hampir di semua fitur kecuali linkshort
 // Botcahx  = digunakan untuk linkshort saja
 
-global.owner = ['6288233832771']  
+global.xznkey = 'mrsd'
+global.owner = ['6288233832771','16199961931']  
 global.mods = ['6288233832771'] 
 global.prems = ['6288233832771']
 global.nameowner = 'mrsd'
-global.numberowner = '6288233832771' 
-global.mail = 'mursidxyz@gmail.com' 
+global.numberowner = '62882006999182' 
+global.mail = 'mursidxml@gmail.com' 
 global.dana = '088233832771'
 global.pulsa = '083189913217'
 global.gopay = '083189913217'
@@ -26,29 +26,29 @@ global.namebot = 'мυʀѕι∂ вσт-χмℓ'
 global.gc = 'https://chat.whatsapp.com/BbSS7pnbSgrCLswuzvOwb5'
 global.web = 'https://github.com/mursidxml'
 global.instagram = 'https://instagram.com/mursid.st'
-global.thumb = 'https://telegra.ph/file/abdd903835895e53aeeb5.jpg'
 global.wm = 'мυʀѕι∂ вσт-χмℓ'
 global.watermark = wm
 global.wm2 = 'мυʀѕι∂ вσт-χмℓ'
 global.wm3 = 'мυʀѕι∂ вσт-χмℓ'
 global.wm4 = 'мυʀѕι∂ вσт-χмℓ'
 global.wait = '_*𝐭𝐮𝐧𝐠𝐠𝐮 𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬 ...*_'
-global.eror = '_*𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬 ...*_'
+global.eror = '_*мααƒ ѕᴇʀνᴇʀ ѕᴇ∂αɴg тι∂αк ѕтαвιℓ..*_'
 global.benar = '*benar*'
 global.salah = '*salah*'
-global.stiker_wait = '_*𝐭𝐮𝐧𝐠𝐠𝐮 𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬 ...*_'
-global.packname = 'ʙᴏᴛ ᴡʜᴀᴛꜱᴀᴘᴘ'
+global.thumb = 'https://telegra.ph/file/7be2d1e81e6b8092c24b2.jpg'
+global.stiker_wait = '*ѕтɪᴄкєʀ ѕє∂αɴg ∂ι вυαт...*'
+global.packname = '© 2023 - 2024'
 global.author = 'мυʀѕι∂ вσт-χмℓ'
 global.read = true//Untuk autoread kalau pengen autoread nyala true kalau pengen mati false 
 //==> Apikey
-global.lann = 'xn4XAZ2K' //isi apikey mu https://api.betabotz.org
+global.lann = 'jLGiBWwj' //isi apikey mu https://api.betabotz.org
 global.btc = 'NWvaNDcP'//Isi apikey di https://api.botcahx.live
 global.APIs = {   
   lann: 'https://api.betabotz.org',
   btc: 'https://api.botcahx.live'
 }
 global.APIKeys = { 
-  'https://api.betabotz.org': 'xn4XAZ2K' //isi apikey mu https://api.betabotz.org
+  'https://api.betabotz.org': 'kasanLovetiara' //isi apikey mu https://api.betabotz.org
 }
 
 global.multiplier = 45
