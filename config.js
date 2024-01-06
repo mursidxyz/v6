@@ -13,7 +13,7 @@
 // Botcahx  = digunakan untuk linkshort saja
 
 global.xznkey = 'mrsd'
-global.owner = ['6288233832771','16199961931']  
+global.owner = ['6288233832771']  
 global.mods = ['6288233832771'] 
 global.prems = ['6288233832771']
 global.nameowner = 'mrsd'
