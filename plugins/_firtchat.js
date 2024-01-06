@@ -13,9 +13,9 @@ handler.before = async function (m) {
     if (new Date - user.pc < 86400000) return // setiap 24 jam sekali
  //   await conn.modifyChat(m.chat, 'mute', -Math.floor(new Date / 1e3) * 1e3 - 1e3).catch(console.log)
     await this.reply(m.chat, `
-Hai ${ucapan()} *${username.replace(/@.+/, '')} 👋* 
+hai *${username.replace(/@.+/, '')}* 
 
-${banned ? `Kamu *Terbanned* Kak 😨\nHubungi: wa.me/${owner[0]}` : ` *Saya AkiraaBot, Bot whatsapp yang berfungsi Untuk membantu pekerjaan anda sehari-hari* \n\n _ada yang harus saya bantu tuan?_`}
+${banned ? `kamu terbanned hubungi owner untuk membuka` : `ada yang bisa saya bantu?`}
 `.trim(), m)
     user.pc = new Date * 1
 }
@@ -23,19 +23,19 @@ ${banned ? `Kamu *Terbanned* Kak 😨\nHubungi: wa.me/${owner[0]}` : ` *Saya Aki
 module.exports = handler
 function ucapan() {
         const hour_now = moment.tz('Asia/Jakarta').format('HH')
-        var ucapanWaktu = 'Pagi kak'
+        var ucapanWaktu = 'selamat pagi'
         if (hour_now >= '03' && hour_now <= '10') {
-          ucapanWaktu = 'Pagi kak'
+          ucapanWaktu = 'selamat pagi'
         } else if (hour_now >= '10' && hour_now <= '15') {
-          ucapanWaktu = 'Siang kak'
+          ucapanWaktu = 'selamat siang'
         } else if (hour_now >= '15' && hour_now <= '17') {
-          ucapanWaktu = 'Sore kak'
+          ucapanWaktu = 'selamat sore'
         } else if (hour_now >= '17' && hour_now <= '18') {
-          ucapanWaktu = 'Selamat Petang kak'
+          ucapanWaktu = 'selamat petang'
         } else if (hour_now >= '18' && hour_now <= '23') {
-          ucapanWaktu = 'Malam kak'
+          ucapanWaktu = 'selamat malam'
         } else {
-          ucapanWaktu = 'Selamat Malam!'
+          ucapanWaktu = 'selamat malam'
         }	
         return ucapanWaktu
                      }
