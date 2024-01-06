@@ -195,7 +195,7 @@ text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ?
       level, limit, name, weton, week, date, dateIslamic, wib, wit, wita, time, totalreg, rtotalreg, role
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-  await conn.sendFile(m.chat, 'https://sf16-ies-music.tiktokcdn.com/obj/ies-music-aiso/7210631055928347418.mp3', 'anuu.mp3', null, m, true, { 
+  await conn.sendFile(m.chat, 'https://sf16-ies-music-va.tiktokcdn.com/obj/musically-maliva-obj/7320833686022523653.mp3', 'anuu.mp3', null, m, true, { 
  type: 'audioMessage',  
  ptt: true, 
 seconds: 99999,
