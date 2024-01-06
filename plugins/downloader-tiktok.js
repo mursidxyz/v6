@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 
 const handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `Masukkan Link\n\nContoh :\n${usedPrefix + command} https://vt.tiktok.com/ZSNv4wgXN/`;
+  if (!args[0]) throw `Masukkan link\n\nContoh :\n${usedPrefix + command} https://vt.tiktok.com/ZSNv4wgXN/`;
   if (!args[0].match(/tiktok/gi)) throw `link tidak ditemukan!`;
     const arr = [
     { text: "[▒▒▒▒▒▒▒▒▒▒]", timeout: 10 },
@@ -45,9 +45,9 @@ title,
 duration,
 music
 } = json.data
-await conn.sendFile(m.chat, play, 'tiktok.mp4', `*Deskripsi Video* : ${title}\n*Username Creator* : ${region}\n*Durasi Video* : ${duration} detik\n*Powered* : ${conn.user.name}`, m)
+await conn.sendFile(m.chat, play, 'tiktok.mp4', `*deskripsi Video* : ${title}\n*username Creator* : ${region}\n*durasi video* : ${duration} detik\n*powered* : ${conn.user.name}`, m)
 await conn.sendFile(m.chat, music, 'error.mp3', null, m, true)
-await conn.sendFile(m.chat, wmplay, 'error.mp4', `*ini video yang pakai watermark tiktok*`, m)
+await conn.sendFile(m.chat, wmplay, 'error.mp4', `*ini video yang pakai tiktok*`, m)
 };
 handler.help = ['tiktok']
 handler.command = /^(tiktok|tt|tiktokdl|tiktoknowm|dlttwm)$/i
