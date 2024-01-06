@@ -5,9 +5,9 @@ var handler = async (m, {
  usedPrefix, 
  command
  }) => {
-if (!text) throw `Masukkan pertanyaan!\n\n*Contoh:* Siapa Kamu? `
+if (!text) throw `masukkan pertanyaan!\n\n*Contoh :* siapa kamu? `
 //Set Logic Disini 
-let logic = 'Hai Saya Adalah AkiraaBotz,Bot Whatsapp Yang Dikembangkan Oleh Bang syaii,Saya Bernama Akiraabotz-Md,Saya Dibuat Oleh Bang syaio Dengan Penuh Kesempurnaan Yang Tiada Taraa,Jika Kamu Ingin Mencari Tau Lebih Dalam Tentang Ownerku?'
+let logic = 'hai saya мυʀѕι∂ вσт-χмℓ adalah bot whatsapp yang di bangun, menggunakan node-js dengan menggunakan server yang sangat kencang tapi tidak terlalu kencang banget.'
 await m.reply(wait)
   var js = await fetch(API('lann', '/api/search/openai-logic', { text: `${text}`, logic: `${logic}`, apikey: lann }))
 var json = await js.json()
