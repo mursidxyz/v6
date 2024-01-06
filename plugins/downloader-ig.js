@@ -1,8 +1,8 @@
 var fetch = require("node-fetch");
 var handler = async (m, { conn, args, usedPrefix, command }) => {
-if (!args[0]) throw `Masukan URL!\n\ncontoh:\n${usedPrefix + command} https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link`;
+if (!args[0]) throw `Masukan URL!\n\ncontoh:\n${usedPrefix + command} https://www.instagram.com/reel/C031H2VhbFF/?igsh=Zjg5dGIxa3YwYTBq`;
   try {
-    m.reply('*Please wait..*');
+    m.reply('*tunggu sebentar..*');
 const url = args[0];
 const get = await fetch(`https://api.lolhuman.xyz/api/Instagram?apikey=sgwn&url=${url}`);
 var js = await get.json()   
@@ -10,7 +10,7 @@ conn.sendFile(m.chat, js.result[0], 'fb.mp4', '', m);
   } catch (e) {
     console.log(e);
     if (m.sender) {
-      conn.reply(m.chat, `_*Terjadi kesalahan!*_`, m);
+      conn.reply(m.chat, `*terjadi kesalahan!*`, m);
     }
   }
 };
