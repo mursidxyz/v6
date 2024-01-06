@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 
 const handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `Masukkan Link\n\nContoh :\n${usedPrefix + command} https://vt.tiktok.com/ZSLQfMyyj/`;
+  if (!args[0]) throw `Masukkan Link\n\nContoh :\n${usedPrefix + command} https://vt.tiktok.com/ZSNv4wgXN/`;
   if (!args[0].match(/tiktok/gi)) throw `link tidak ditemukan!`;
     const arr = [
     { text: "[▒▒▒▒▒▒▒▒▒▒]", timeout: 10 },
