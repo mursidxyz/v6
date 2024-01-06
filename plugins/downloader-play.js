@@ -1,70 +1,85 @@
-const uploadImage = require('../lib/uploadImage');
-const fetch = require('node-fetch');
+const util = require('util')
+const fetch = require('node-fetch')
+const { youtubeSearch } = require('@bochilteam/scraper')
 
-var handler = async (m, { conn, text, usedPrefix }) => {
-    if (!text) throw 'Masukkan Judul';
-    try {
-        var js = await fetch(API('lann', '/api/search/yts', { query: text, apikey: lann }));
-        var search = await js.json();
-        var convert = search.result[0];
-        if (!convert) throw 'Video/Audio Tidak Ditemukan';
-        if (convert.duration >= 3600) {
-            return conn.reply(m.chat, 'Video lebih dari 1 jam!', m);
-        } else {
-            var audioUrl;
-            try {
-                audioUrl = await (await fetch(API('lann', '/api/download/ytmp3', { url: convert.url, apikey: lann }))).json();
-            } catch (e) {
-                conn.reply(m.chat, wait, m);
-                audioUrl = await (await fetch(API('lann', '/api/download/ytmp3', { url: convert.url, apikey: lann }))).json();
-            } 
-            var build = await fetch(convert.thumbnail);
-            var buffer = await build.buffer();
-            var image = await uploadImage(buffer);
-            var caption = `∘ Judul : ${convert.title}\n∘ Ekstensi : Pencarian\n∘ ID : ${convert.videoId}\n∘ Durasi : ${convert.duration}\n∘ Penonton : ${convert.views}\n∘ Diunggah Pada : ${convert.published_at}\n∘ Penulis : ${convert.author.name}\n∘ Saluran : ${convert.author.url}\n∘ Tautan : ${convert.url}\n∘ Deskripsi : ${convert.description}\n∘ Thumbnail : ${image}`;
-            var pesan = conn.relayMessage(m.chat, {
-                extendedTextMessage:{
-                    text: caption, 
-                    contextInfo: {
-                        externalAdReply: {
-                            title: "Diberdayakan oleh",
-                            mediaType: 1,
-                            previewType: 0,
-                            renderLargerThumbnail: true,
-                            thumbnailUrl: image,
-                            sourceUrl: audioUrl.result.mp3
-                        }
-                    }, mentions: [m.sender]
-                }
-            }, {});
-            conn.sendMessage(m.chat, {
-                audio: {
-                    url: audioUrl.result.mp3
-                },
-                mimetype: 'audio/mpeg',
-                contextInfo: {
-                    externalAdReply: {
-                        title: convert.title,
-                        body: "",
-                        thumbnailUrl: image,
-                        sourceUrl: audioUrl.result.mp3,
-                        mediaType: 1,
-                        showAdAttribution: true,
-                        renderLargerThumbnail: true
-                    }
-                }
-            }, {
-                quoted: m
-            });
-        }
-    } catch (e) {
-        conn.reply(m.chat, `*Error:* ` + e, m);
-    }
-};
+const playing = {}
+const handler = async (m, { conn, text }) => {
+	if (!text) throw '*Masukkan judul*\nContoh : #play hurts so good'
+	let vid = (await youtubeSearch(text)).video[0]
+	if (!vid) throw '*Maaf audio/video tidak ditemukan*'
+	
+	let {
+		title,
+		description, 
+		thumbnail, 
+		videoId, 
+		durationH, 
+		durationS,
+		viewH,
+		publishedTime 
+	} = vid
+	let isLimit = durationS > 18000
+	let url = 'https://www.youtube.com/watch?v=' + videoId
+	
+	let json = !isLimit && await (await fetch(`https://skizo.tech/api/yt1s?url=${url}&apikey=mrsd`)).json()
+	if (json.err) throw json.err
+	
+	let arr = json ? [...Object.values(json.video), ...Object.values(json.audio)] : []
+	
+	let txt = `
+*Judul : ${title}*
+*Publik : ${publishedTime}*
+*Durasi Video : ${durationH}*
+*Views : ${viewH}* 
+*Link : ${url}*
+*Deskripsi : ${description}*${isLimit ? '' : `
 
-handler.command = handler.help = ['play', 'song', 'ds'];
-handler.tags = ['downloader'];
-handler.exp = 0;
-handler.limit = true;
-handler.premium = false;
-module.exports = handler;
+*silahkan pilih angka 1-${arr.length}:*
+${arr.map(({ quality: q, fileSizeH }, idx) =>
+	`${idx + 1}. ${/p$/.test(q) ? 'Video' : 'Audio'} ${q} (${fileSizeH})`
+).join('\n')}
+
+balas pesan ini dengan *angka* diatas\njika ingin mengubah audio, reply media yang terkirim tersebut dengan teks #tomp3`}
+`
+	let msg = await conn.sendMessage(m.chat, {
+		text: txt,
+		contextInfo: {
+			externalAdReply: {
+				body: conn.user.name,
+				thumbnailUrl: thumbnail,
+				sourceUrl: url,
+				mediaType: 1,
+				showAdAttribution: true,
+				renderLargerThumbnail: true
+			}
+		}
+	}, { quoted: m })
+	
+	if (isLimit) return conn.sendMessage(m.chat, { text: `_Durasi terlalu panjang..._\n*Duration Limit!*` }, { quoted: msg })
+	playing[msg.key.id] = arr
+}
+
+handler.before = async (m, { conn }) => {
+	if (!(m.quoted && m.quoted.fromMe)) return
+	
+	let idx
+	if (idx = Object.keys(playing).find(id => id === m.quoted.id)) {
+		let data = playing[idx][m.text - 1]
+		if (!data) return
+		let res = await fetch(data.url, { headers: { referer: 'https://y2mate.com/' }})
+		if (!res.ok || res.status !== 200) return m.reply(res.statusText)
+		
+		let type = res.headers.get('content-type')
+		if (/json|text/.test(type)) return m.reply(util.format(await res.text()))
+		
+		await conn.sendFile(m.chat, Buffer.from(await res.arrayBuffer()), '', '', m, { mimetype: 'audio/mpeg' })
+	}
+}
+
+handler.command = handler.help = ['play']
+handler.tags = ['downloader']
+handler.exp = 0
+handler.limit = true
+handler.premium = false
+
+module.exports = handler
