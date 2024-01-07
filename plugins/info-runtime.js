@@ -7,14 +7,10 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let time = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss')
 
 var reply = `
-
-*───「 RUNTIME BOT 」───*
-
-Runtime : ${tio}
-
+*bot berjalan selama : ${tio}*
     `
 
-conn.sendFile(m.chat, `https://telegra.ph/file/d6202dfdc68e72b669631.jpg`, null, reply, m)
+conn.sendFile(m.chat, `https://telegra.ph/file/9241fe306d5e5b2dd9761.jpg`, null, reply, m)
 
 }
 
@@ -42,6 +38,6 @@ function clockString(ms) {
 
     let sec = Math.floor((minutesms) / (1000));
 
-    return days + " Day " + hours + " Hour " + minutes + " Minute " + sec + " Second ";
+    return days + "hari" + hours + "jam" + minutes + "menit" + sec + "detik";
 
 }
