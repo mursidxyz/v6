@@ -3,7 +3,7 @@ let handler = m => m
 
 handler.before = async function (m) {
 
-    if (m.chat.endsWith('broadcast') || m.key.remoteJid.endsWith('broadcast')) return
+    if (m.chat.endsWith('broadcast')) return
     if (m.fromMe) return
     if (m.isGroup) return
    // if (db.data.settings.groupOnly) return
@@ -12,11 +12,11 @@ handler.before = async function (m) {
     let username = conn.getName(m.sender) 
     if (new Date - user.pc < 86400000) return // setiap 24 jam sekali
  //   await conn.modifyChat(m.chat, 'mute', -Math.floor(new Date / 1e3) * 1e3 - 1e3).catch(console.log)
-    await this.reply(m.chat, `
-hai *${username.replace(/@.+/, '')}* 
+    let thumb = 'https://telegra.ph/file/d59776ea4b0efb0879167.jpg'
+    let dann = `hai ${ucapan()} *${username.replace(/@.+/, '')}*
 
-${banned ? `kamu terbanned hubungi owner untuk membuka` : `мυʀѕι∂ вσт-χмℓ adalah bot whatsapp multi device yang di bangun menggunakan node-js, dengan menggunakan server yang sangat kencang tapi tidak terlalu kencang-kencang banget`}
-`.trim(), m)
+${banned ? `kamu telah terbanned hubungi https://wa.me/+${owner[0]}` : 'мυʀѕι∂ вσт-χмℓ adalah bot whatsapp multi device yang di bangun menggunakan node-js, dengan menggunakan server yang sangat kencang tapi tidak terlalu kencang-kencang banget'}`
+   await conn.sendFile(m.chat, thumb, 'chat.jpg', `${dann}`, m)
     user.pc = new Date * 1
 }
 
@@ -38,4 +38,4 @@ function ucapan() {
           ucapanWaktu = 'selamat malam'
         }	
         return ucapanWaktu
-                     }
+}
