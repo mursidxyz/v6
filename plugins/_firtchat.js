@@ -15,7 +15,7 @@ handler.before = async function (m) {
     await this.reply(m.chat, `
 hai *${username.replace(/@.+/, '')}* 
 
-${banned ? `kamu terbanned hubungi owner untuk membuka` : `ada yang bisa saya bantu?`}
+${banned ? `kamu terbanned hubungi owner untuk membuka` : `мυʀѕι∂ вσт-χмℓ adalah bot whatsapp multi device yang di bangun menggunakan node-js, dengan menggunakan server yang sangat kencang tapi tidak terlalu kencang-kencang banget`}
 `.trim(), m)
     user.pc = new Date * 1
 }
