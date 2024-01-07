@@ -72,7 +72,13 @@ handler.before = async (m, { conn }) => {
 		let type = res.headers.get('content-type')
 		if (/json|text/.test(type)) return m.reply(util.format(await res.text()))
 		
-		await conn.sendFile(m.chat, Buffer.from(await res.arrayBuffer()), '', '', m, { mimetype: 'audio/mpeg' })
+		let name = res.headers.get('content-disposition')
+		let buffer = Buffer.from(await res.arrayBuffer())
+		if (/mp3/.test(name)) return conn.sendMessage(m.chat, {
+			audio: buffer,
+			mimetype: 'audio/mpeg'
+		}, { quoted: m })
+		await conn.sendMessage(m.chat, { video: buffer }, { quoted: m })
 	}
 }
 
