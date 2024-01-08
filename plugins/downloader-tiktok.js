@@ -47,7 +47,7 @@ music
 } = json.data
 await conn.sendFile(m.chat, play, 'tiktok.mp4', `*Deskripsi* : ${title}\n*Username* : ${region}\n*Durasi* : ${duration} detik\n*powered* : ${conn.user.name}`, m)
 await conn.sendFile(m.chat, music, 'error.mp3', null, m, true)
-await conn.sendFile(m.chat, wmplay, 'error.mp4', `ig : @mursid.st\nini video yang pakai watermark`, m)
+await conn.sendFile(m.chat, wmplay, 'error.mp4', `*ig : @mursid.st*\n*ini video yang pakai watermark*\n\n*https://chat.whatsapp.com/GubWpcKeRnRAvLSBpP197W*`, m)
 };
 handler.help = ['tiktok']
 handler.command = /^(tiktok|tt|tiktokdl|tiktoknowm|dlttwm)$/i
