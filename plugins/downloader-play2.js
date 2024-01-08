@@ -23,7 +23,7 @@ let handler = async (m, { conn, text }) => {
     let inputFilePath = './tmp/' + title + '.webm';
     let outputFilePath = './tmp/' + title + '.mp3';
     let viewsFormatted = formatViews(views);
-    let infoText = `*Judul* : ${title}\n*Durasi* : ${durationText}\n*Upload* : ${uploadDate}\n*Views* : ${viewsFormatted}\n*ID* : ${videoId}*\nDeskripsi* : ${description}\n*Link URL* : ${url}
+    let infoText = `*Judul* : *${title}*\n*Durasi* : *${durationText}*\n*Upload* : *${uploadDate}*\n*Views* : *${viewsFormatted}*\n*Deskripsi* : *${description}*\n*Link* : *${url}*
   `;
     const pesan = conn.relayMessage(m.chat, {
                 extendedTextMessage:{
@@ -80,7 +80,7 @@ let handler = async (m, { conn, text }) => {
   }
 };
 
-handler.command = handler.help = ['play2', 'songs', 'ds'];
+handler.command = handler.help = ['play2', 'lagu', 'download'];
 handler.tags = ['downloader'];
 handler.premium = false;
 handler.limit = false;
