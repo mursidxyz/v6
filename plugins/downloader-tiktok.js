@@ -4,16 +4,16 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
   if (!args[0]) throw `Masukkan link\n\nContoh :\n${usedPrefix + command} https://vt.tiktok.com/ZSNv4wgXN/`;
   if (!args[0].match(/tiktok/gi)) throw `link tidak ditemukan!`;
     const arr = [
-    { text: "[0%▒▒▒▒▒▒▒▒▒▒]", timeout: 10 },
-    { text: "[█10%▒▒▒▒▒▒▒▒]", timeout: 10 },
-    { text: "[██20%▒▒▒▒▒▒▒]", timeout: 10 },
-    { text: "[███30%▒▒▒▒▒▒]", timeout: 10 },
-    { text: "[████40%▒▒▒▒▒]", timeout: 10 },
-    { text: "[█████50%▒▒▒▒]", timeout: 10 },
-    { text: "[██████60%▒▒▒]", timeout: 10 },
-    { text: "[███████70%▒▒]", timeout: 10 },
-    { text: "[████████80%▒]", timeout: 10 },
-    { text: "[█████████90%]", timeout: 10 },
+    { text: "[0%▒▒▒▒▒▒▒▒▒▒▒▒]", timeout: 10 },
+    { text: "[█10%▒▒▒▒▒▒▒▒▒▒]", timeout: 10 },
+    { text: "[██20%▒▒▒▒▒▒▒▒▒]", timeout: 10 },
+    { text: "[███30%▒▒▒▒▒▒▒▒]", timeout: 10 },
+    { text: "[████40%▒▒▒▒▒▒▒]", timeout: 10 },
+    { text: "[█████50%▒▒▒▒▒▒]", timeout: 10 },
+    { text: "[██████60%▒▒▒▒▒]", timeout: 10 },
+    { text: "[███████70%▒▒▒▒]", timeout: 10 },
+    { text: "[████████80%▒▒▒]", timeout: 10 },
+    { text: "[█████████90%▒▒]", timeout: 10 },
     { text: "[██████████100%]", timeout: 10 },
     { text: `*berhasil mendapatkan media*\n*video/media akan segara di kirim, mohon tunggu beberapa detik*`, timeout: 10 }
   ];
